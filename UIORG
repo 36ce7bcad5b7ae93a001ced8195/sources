@@ -1709,7 +1709,7 @@ M.scriptv = function(strb)
 					end
 					return K;
 				end;
-				local H = i({Title="Warning",Content="Do you want to close this window?",Buttons={{Title="No",Callback=function()
+				local H = i:Dialog({Title="Warning",Content="Do you want to close this window?",Buttons={{Title="No",Callback=function()
 				end},{Title="Yes",Callback=function()
 					i.Close();
 				end}}});
