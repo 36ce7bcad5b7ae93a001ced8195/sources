@@ -1553,9 +1553,11 @@ M.scriptv = function(strb)
 							F.Image = d.Icon(i.Icon)[1];
 							F.ImageRectOffset = d.Icon(i.Icon)[2].ImageRectPosition;
 							F.ImageRectSize = d.Icon(i.Icon)[2]._Size;
-							z.Image = d.Icon(i.Icon)[1];
-							z.ImageRectOffset = d.Icon(i.Icon)[2].ImageRectPosition;
-							z.ImageRectSize = d.Icon(i.Icon)[2]._Size;
+							if z then
+								z.Image = d.Icon(i.Icon)[1];
+								z.ImageRectOffset = d.Icon(i.Icon)[2].ImageRectPosition;
+								z.ImageRectSize = d.Icon(i.Icon)[2]._Size;
+							end
 						end
 						if string.find(i.Icon, "http") then
 							if not isfile("WindUI" .. i.Folder .. "/Assets/Icon.png") then
