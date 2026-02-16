@@ -12652,7 +12652,7 @@ do
 			return aa
 		end)
 		aa(game:GetService "UserInputService")
-		local ae = game.Players.LocalPlayer:GetMouse()
+		local ae = game:GetService("Players").LocalPlayer:GetMouse()
 
 		local af = a.load "b"
 		local ah = af.New
@@ -14696,7 +14696,7 @@ do
 				local function GetUserThumb()
 					local aB, aC =
 						aa(game:GetService "Players"):GetUserThumbnailAsync(
-							as.User.Anonymous and 1 or game.Players.LocalPlayer.UserId,
+							as.User.Anonymous and 1 or game:GetService("Players").LocalPlayer.UserId,
 							Enum.ThumbnailType.HeadShot,
 							Enum.ThumbnailSize.Size420x420
 						)
@@ -14792,7 +14792,7 @@ do
 												"TextLabel",
 												{
 													Text = as.User.Anonymous and "Anonymous" or
-													game.Players.LocalPlayer.DisplayName,
+													game:GetService("Players").LocalPlayer.DisplayName,
 													TextSize = 17,
 													ThemeTag = {
 														TextColor3 = "Text"
@@ -14810,7 +14810,7 @@ do
 												"TextLabel",
 												{
 													Text = as.User.Anonymous and "anonymous" or
-													game.Players.LocalPlayer.Name,
+													game:GetService("Players").LocalPlayer.Name,
 													TextSize = 15,
 													TextTransparency = .6,
 													ThemeTag = {
@@ -14882,8 +14882,8 @@ do
 					end
 					as.User.Anonymous = aC
 					aA.UserIcon.ImageLabel.Image = GetUserThumb()
-					aA.UserIcon.Frame.DisplayName.Text = aC and "Anonymous" or game.Players.LocalPlayer.DisplayName
-					aA.UserIcon.Frame.UserName.Text = aC and "anonymous" or game.Players.LocalPlayer.Name
+					aA.UserIcon.Frame.DisplayName.Text = aC and "Anonymous" or game:GetService("Players").LocalPlayer.DisplayName
+					aA.UserIcon.Frame.UserName.Text = aC and "anonymous" or game:GetService("Players").LocalPlayer.Name
 				end
 
 				function as.User.Update(self, dispName, userName)
@@ -16688,7 +16688,7 @@ local ar = a.load "q"
 local as = protectgui or (syn and syn.protect_gui) or function()
 end
 
-local au = gethui and gethui() or (aj or game.Players.LocalPlayer:WaitForChild "PlayerGui")
+local au = gethui and gethui() or (aj or game:GetService("Players").LocalPlayer:WaitForChild "PlayerGui")
 
 local av =
 	ap(
