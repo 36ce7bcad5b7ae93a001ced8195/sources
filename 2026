@@ -16725,7 +16725,7 @@ aa.ScreenGui =
 	ap(
 		"ScreenGui",
 		{
-			Name = "WindUI",
+			Name = "xen",
 			Parent = au,
 			IgnoreGuiInset = true,
 			ScreenInsets = "None"
@@ -16934,8 +16934,8 @@ function aa.CreateWindow(ax, ay)
 	local az = a.load "Y"
 	
 	if not studio then
-		if not isfolder "WindUI" then
-			makefolder "WindUI"
+		if not isfolder "xeniox" then
+			makefolder "xeniox"
 		end
 		if ay.Folder then
 			makefolder(ay.Folder)
