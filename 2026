@@ -7155,7 +7155,7 @@ do
 				end
 			end
 
-			ai:Set(ak, false, ah.Window.NewElements)
+			ai:Set(ak, ai.Value, ah.Window.NewElements)
 
 			if ah.Window.NewElements and am.Animate then
 				aa.AddSignal(
