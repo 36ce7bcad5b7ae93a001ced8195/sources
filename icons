@@ -1,5 +1,4 @@
--- This is a new version   
-
+return function(loaf)
 local cloneref = (cloneref or clonereference or function(instance) return instance end)
 
 local RunService = cloneref(game:GetService("RunService"))
@@ -12,7 +11,23 @@ local function Get(url)
         return HttpService:GetAsync(url)
     end
 end
+local function writeSource(URL,path)
+    local source = Get(URL)
+    writefile(path,source)
+    return source
+end
+function loadSourceIf(path,url,returnstr)
+    local has = isfile(path) 
 
+    if not has then writeSource(url,path) end
+    local str = readfile(path)           
+    if str and not returnstr then
+
+        return loadstring(str)()
+    else
+        return str
+    end
+end
 
 local IconModule = {  
     IconsType = "lucide",  
@@ -21,11 +36,11 @@ local IconModule = {
     IconThemeTag = nil,  
       
     Icons = {  
-        lucide = loadstring(Get("https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/lucide/dist/Icons.lua"))(),
-        solar = loadstring(Get("https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/solar/dist/Icons.lua"))(),
-        craft = loadstring(Get("https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/craft/dist/Icons.lua"))(),
-        geist = loadstring(Get("https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/geist/dist/Icons.lua"))(),
-        sfsymbols = loadstring(Get("https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/sfsymbols/dist/Icons.lua"))(),
+        lucide = loadSourceIf(loaf..'/'..'lucide',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/lucide/dist/Icons.lua"),
+        solar = loadSourceIf(loaf..'/'..'solar',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/solar/dist/Icons.lua"),
+        craft = loadSourceIf(loaf..'/'..'craft',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/craft/dist/Icons.lua"),
+        geist = loadSourceIf(loaf..'/'..'geist',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/geist/dist/Icons.lua"),
+        sfsymbols =loadSourceIf(loaf..'/'..'sfsymbols',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/sfsymbols/dist/Icons.lua"),
     }
 }  
   
@@ -231,3 +246,4 @@ function IconModule.Image(IconConfig)
 end  
   
 return IconModule
+end
