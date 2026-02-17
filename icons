@@ -36,11 +36,11 @@ local IconModule = {
     IconThemeTag = nil,  
       
     Icons = {  
-        lucide = loadSourceIf(loaf..'/'..'lucide',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/lucide/dist/Icons.lua"),
-        solar = loadSourceIf(loaf..'/'..'solar',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/solar/dist/Icons.lua"),
-        craft = loadSourceIf(loaf..'/'..'craft',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/craft/dist/Icons.lua"),
-        geist = loadSourceIf(loaf..'/'..'geist',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/geist/dist/Icons.lua"),
-        sfsymbols =loadSourceIf(loaf..'/'..'sfsymbols',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/sfsymbols/dist/Icons.lua"),
+        lucide = loadSourceIf(loaf..'/IconManager/lucide',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/lucide/dist/Icons.lua"),
+        solar = loadSourceIf(loaf..'/IconManager/solar',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/solar/dist/Icons.lua"),
+        craft = loadSourceIf(loaf..'/IconManager/craft',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/craft/dist/Icons.lua"),
+        geist = loadSourceIf(loaf..'/IconManager/geist',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/geist/dist/Icons.lua"),
+        sfsymbols =loadSourceIf(loaf..'/IconManager/sfsymbols',"https://raw.githubusercontent.com/Footagesus/Icons/refs/heads/main/sfsymbols/dist/Icons.lua"),
     }
 }  
   
