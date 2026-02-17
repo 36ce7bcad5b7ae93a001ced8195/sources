@@ -1,3 +1,6 @@
+local UI = {}
+
+UI.L= function(loaf)
 local a
 local studio = game:GetService("RunService"):IsStudio()
 
@@ -69,20 +72,38 @@ do
 		local h = b(game:GetService("HttpService"))
 		local i = d.Heartbeat
 
-		local j = "https://raw.githubusercontent.com/Footagesus/Icons/main/Main-v2.lua"
+        local function writeSource(URL,path)
+            local source = game:HttpGetAsync(URL)
+            writefile(path,source)
+            return source
+        end
+        function loadSourceIf(path,url,returnstr)
+            local has = isfile(path) 
 
+            if not has then writeSource(url,path) end
+            local str = readfile(path)           
+            if str and not returnstr then
+
+                return loadstring(str)()
+            else
+                return str
+            end
+        end
+
+		local j = "https://raw.githubusercontent.com/Footagesus/Icons/main/Main-v2.lua"
+        local cached = loadSourceIf(loaf..'\n'..'icons',j,true)
 		local l_content
 		if not studio then
 			if game.HttpGet then 
-				l_content = game:HttpGet(j)
+				l_content = cached --game:HttpGet(j)
 			else
-				l_content = h:GetAsync(j)
+				l_content = cached --h:GetAsync(j)
 			end
 			
 		else
 			l_content = require(script.manager)
 		end
-		warn(2)
+
 
 		local lq = not studio and loadstring(l_content)() or l_content
 		
@@ -17038,3 +17059,6 @@ function aa.CreateWindow(ax, ay)
 end
 
 return aa
+end
+
+return UI
