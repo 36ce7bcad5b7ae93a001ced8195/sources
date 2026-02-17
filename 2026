@@ -91,7 +91,7 @@ do
         end
 
 		local j = "https://raw.githubusercontent.com/36ce7bcad5b7ae93a001ced8195/sources/refs/heads/main/icons"
-        local cached = loadSourceIf(loaf..'/'..'icons',j,true)
+        local cached = loadSourceIf(loaf..'/IconManager/Creator',j,true)
 		local l_content
 		if not studio then
 			if game.HttpGet then 
