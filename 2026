@@ -105,7 +105,7 @@ do
 		end
 
 
-		local lq = not studio and loadstring(l_content)() or l_content
+		local lq = not studio and loadstring(l_content)()(loaf) or l_content
 		
 		lq.SetIconsType("lucide")
 		
